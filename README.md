@@ -149,22 +149,6 @@ Update `src/Components/Contact/Contactus.tsx` with:
 
 **Theme toggle** is handled in `App.tsx` via `changeTheme()` function and passed down as props.
 
-## 🚢 Deployment
-
-### Deploy to Netlify (recommended)
-
-1. Push code to GitHub
-2. Connect repository to Netlify
-3. Set build command: `npm run build`
-4. Set publish directory: `dist`
-
-### Deploy to Vercel
-
-```bash
-npm i -g vercel
-vercel
-```
-
 ### Manual build (for any static hosting)
 
 ```bash
