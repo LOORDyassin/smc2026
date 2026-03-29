@@ -1,0 +1,162 @@
+/* General Footer Styling */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Footer Layout */
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Logo & Description */
+.footer__logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer__logo-img {
+    width: 330px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.footer__desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    color: #bbb;
+}
+
+/* Social Media Links */
+.social__links {
+    margin-top: 20px;
+}
+
+.social__links a {
+    color: #bbb;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social__links a:hover {
+    color: var(--primary-color);
+}
+
+/* Quick Links */
+.footer__quick-links-wrapper {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer__quick-links {
+    text-align: left;
+}
+
+.quick__links-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(55 156 246);
+    margin-bottom: 15px;
+}
+
+.quick__links {
+    list-style: none;
+    padding: 0;
+}
+
+.quick__link-item {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.quick__link-item a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.quick__link-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer Bottom */
+.footer__bottom {
+    margin-top: 40px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.footer__links {
+    margin-top: 10px;
+}
+
+.footer__links a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer__links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer__wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__logo {
+        text-align: center;
+    }
+
+    .footer__quick-links-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__quick-links {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__desc {
+        font-size: 0.9rem;
+    }
+
+    .quick__links-title {
+        font-size: 1.25rem;
+    }
+
+    .quick__link-item {
+        font-size: 0.9rem;
+    }
+
+    .social__links a {
+        font-size: 1.3rem;
+    }
+}

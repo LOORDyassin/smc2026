@@ -1,0 +1,590 @@
+/* src/components/Achievements/achievements.css */
+
+/* —————————————————————————————————————————————
+   0) Make container allow arrows to overflow
+————————————————————————————————————————————— */
+.achievements__slider-container {
+  position: relative;
+  overflow: visible;
+}
+
+/* —————————————————————————————————————————————
+   1) Desktop arrows: span full width, layer on top
+————————————————————————————————————————————— */
+.slider-arrows {
+  display: flex;              /* visible by default */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  justify-content: space-between;
+  padding: 0 1rem;
+  pointer-events: none;       /* let clicks pass through wrapper */
+  z-index: 5;
+}
+.slider-arrow {
+  pointer-events: auto;       /* enable clicks on buttons */
+}
+
+/* —————————————————————————————————————————————
+   Base styles
+————————————————————————————————————————————— */
+.achievements {
+  padding: 5rem 0;
+  background: #f8f8f8;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.achievements__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.achievements__title {
+  font-size: 2.5rem;
+  color: #333;
+}
+.dark-theme .achievements__title {
+  color: #fff;
+}
+.highlight {
+  color: #0682c1;
+}
+
+/* 2) Equal-height row of cards */
+.achievements__wrapper {
+  display: flex;
+  align-items: stretch;      /* force equal height */
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  transition: transform 0.3s ease;
+  
+}
+
+/* 3) Card setup */
+.light-theme .achievement__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  min-height: 550px;         /* lock in a floor */
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.achievement__card {
+  background: var(--card-bg);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  min-height: 550px;         /* lock in a floor */
+  padding: 2rem;
+  border-radius: 1rem;
+
+}
+
+/* 4) Middle-card highlight */
+.achievement__card.middle-card {
+  width: 380px;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  min-height: 550px;
+}
+
+.achievement__img {
+  position: relative;
+  height: 220px;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.achievement__card.middle-card .achievement__img {
+  height: 240px;
+}
+.achievement__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.achievement__date {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+
+.achievement__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.achievement__content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.dark-theme .achievement__content h3 {
+  color: #fff;
+}
+.achievement__description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp:6;            /* show at most 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+.dark-theme .achievement__description {
+  color: #ccc;
+}
+.read-more__btn {
+  background: transparent;
+  border: none;
+  color: #0682c1;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0682c1;
+  color: white;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slider-arrow.left {
+  left: -1.5rem;
+}
+
+.slider-arrow.right {
+  right: -1.5rem;
+}
+
+/* —————————————————————————————————————————————
+   Mobile arrows hidden by default
+————————————————————————————————————————————— */
+.mobile-arrows {
+  display: none;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.mobile-arrow {
+  background: #0682c1;
+  color: #fff;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+/* —————————————————————————————————————————————
+   RESPONSIVE
+————————————————————————————————————————————— */
+/* hide side-arrows, show bottom-arrows on small screens */
+@media (max-width: 768px) {
+  .slider-arrows { display: none !important; }
+  .mobile-arrows { display: flex !important; }
+
+  .achievements__wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  .achievement__card,
+  .achievement__card.middle-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: unset;       /* let content size naturally */
+    transform: none !important;
+  }
+  .achievement__img,
+  .achievement__card.middle-card .achievement__img {
+    height: 200px;
+  }
+}
+
+/* hide bottom-arrows on desktop */
+@media (min-width: 769px) {
+  .mobile-arrows { display: none !important; }
+}
+/* —————————————————————————————————————————————
+  MODAL STYLES
+————————————————————————————————————————————— */
+
+/* 1) Backdrop: dark, slightly blurred */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-window {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  width: 80vw;
+  max-width: 1000px;
+  max-height: 90vh;
+  border-radius: 1rem;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 20px var(--primary-color), 0 0 50px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInWindow 0.4s ease-out both;
+}
+.light-theme .modal-window {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: none;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 15px var(--primary-color), 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(55,156,246,0.8), rgba(193,243,255,0.8));
+  padding: 1rem 3rem 1rem 1.25rem;
+  border-bottom: 1px solid rgba(white, 0.2);
+}
+.light-theme .modal-header {
+  background: linear-gradient(90deg, rgba(6,130,193,0.8), rgba(189,243,255,0.8));
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+   .modal-header h3 {
+    font-size: 1.6rem;           /* slightly larger */
+    font-weight: 700;            /* extra bold */
+    color: #ffffff;              /* solid white */
+    margin: 0;
+    text-transform: uppercase;   /* for impact */
+    letter-spacing: 1.3px;
+    position: relative;
+    /* subtle drop‐shadow to lift text off the header */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .modal-close {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    /* center the close icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* frosted‐glass circle */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  
+    font-size: 1.2rem;
+    color: #000; /* icon color */
+    cursor: pointer;
+    transition:
+      background 0.3s ease,
+      transform 0.2s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    transform: scale(1.05);
+    color: #ff4d4d;
+  }
+  
+  .modal-close:active {
+    transform: scale(0.95);
+  }
+  
+  .light-theme .modal-close {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #0d1117;
+  }
+  
+  .light-theme .modal-close:hover {
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    color: #ff4d4d;
+  }
+  
+
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  color: white;
+  position: relative;
+}
+.light-theme .modal-body {
+  color: var(--text-color);
+}
+/* —————————————————————————————————————————————
+   MODAL IMAGE – keep full aspect, fit by width
+————————————————————————————————————————————— */
+.modal-image {
+  display: block;           /* treat as block so margin auto centers */
+  max-width: 80%;           /* never wider than 80% of the modal’s inner width */
+  width: auto;              /* auto‐scale width below that */
+  height: auto;             /* maintain aspect ratio */
+  border-radius: 0.5rem;
+  margin: 0 auto 1rem auto; /* center horizontally, add bottom margin */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.dark-theme .modal-image {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-date {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+}
+.light-theme .modal-date {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* 5) Gradient underline accent under the image */
+.modal-body::before {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, rgba(55,156,246,1), rgba(193,243,255,1));
+  border-radius: 2px;
+}
+.light-theme .modal-body::before {
+  background: linear-gradient(90deg, rgba(6,130,193,1), rgba(189,243,255,1));
+}
+/* —————————————————————————————————————————————
+   MODAL DESCRIPTION HEADING + BOLD TEXT
+————————————————————————————————————————————— */
+
+/* 1) “Description” label above the actual text */
+.modal-subtitle {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;           /* slightly bold */
+  color: var(--text-color);   /* auto‐switches between light/dark */
+  border-left: 4px solid var(--primary-color);
+  padding-left: 0.75rem;
+}
+
+/* 2) Make the actual description text bolder for better visibility */
+.modal-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  font-weight: 500;           /* “gras” / medium‐bold */
+  color: var(--text-color);   /* ensure it’s visible in both themes */
+}
+
+/* Dark‐theme overrides */
+.dark-theme .modal-subtitle {
+  color: #ddd;                /* lighter gray on dark background */
+}
+.dark-theme .modal-description {
+  color: #eee;                /* near‐white for better contrast */
+}
+
+/* 6) Animation for window fade/scale */
+@keyframes fadeInWindow {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 7) Responsive adjustments */
+@media (max-width: 800px) {
+  .modal-window {
+    width: 90vw;
+    max-height: 80vh;
+  }
+  .modal-header h3 {
+    font-size: 1.3rem;
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+  .modal-description {
+    font-size: 0.95rem;
+  }
+  .modal-nav {
+    top: 40%;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-nav {
+    top: 30%;
+  }
+  .modal-header {
+   position: relative;
+   padding: 1rem 3rem 1rem 1.25rem;
+  }
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    /* center the close icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* frosted‐glass circle */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  
+    font-size: 1.2rem;
+    color: #000; /* icon color */
+    cursor: pointer;
+    transition:
+      background 0.3s ease,
+      transform 0.2s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    transform: scale(1.05);
+  }
+  
+  .modal-close:active {
+    transform: scale(0.95);
+  }
+  
+  .light-theme .modal-close {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #0d1117;
+  }
+  
+  .light-theme .modal-close:hover {
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  .modal-header h3 {
+    font-size: 1.1rem;
+  }
+  .modal-image {
+    margin-bottom: 0.75rem;
+  }
+}
+/* 2) Carousel nav buttons: centered vertically over the image */
+
+
+.modal-nav:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* 3) Position the “previous” arrow on the left edge of the image area */
+.modal-nav-left {
+  left: 0.4rem;   /* adjust this if you want it closer/farther from the image edge */
+}
+
+/* 4) Position the “next” arrow on the right edge of the image area */
+.modal-nav-right {
+  right: 0.4rem;  /* adjust spacing as needed */
+}
+
+/* 5) Make sure the image has enough top-margin so buttons don’t collide with the header */
+.modal-image {
+  /* If you find the buttons overlap the header, you can push the image down: */
+  margin-top: 0.5rem;  /* optional: add a small top margin so controls sit fully on the image */
+}
+
+/* 6) (Optional) Hide carousel buttons on small screens if desired */
+

@@ -1,0 +1,278 @@
+
+/* Content Layout */
+.about-content {
+  display: flex;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;  
+  justify-content: space-between;  
+
+}
+
+/* Text Section */
+.about-text {
+  flex: 1;
+  color: #ffffff;
+  
+}
+
+.about-title {
+  font-size: 3.2rem;
+  background: linear-gradient(90deg, #0682c1, #00bcd4);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  position: relative;
+  text-shadow: 0 0 30px rgba(33, 150, 243, 0.3);
+}
+
+.about-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #000000;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.about-desc-dark {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+/* Button Styles */
+.explore-button {
+  position: relative;
+  background: var(--primary-color);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.explore-button a {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-decoration: none;
+}
+
+.button-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.explore-button:hover .button-glow {
+  width: 200%;
+  height: 200%;
+}
+.smaller-title {
+  position: relative;
+  padding-left: 25px; /* Add some space for the bullet */
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #565b5f, #D3D3D3); /* Gradient from dark gray to light gray */
+  -webkit-background-clip: text; /* Apply the gradient to the text */
+  color: transparent; /* Make the text color transparent so the gradient shows through */
+}
+
+
+.smaller-title::before {
+  content: '•'; /* Unicode character for a bullet */
+  position: absolute;
+  left: 0; /* Position the bullet at the start */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the bullet */
+  font-size: 2rem; /* Adjust the size of the bullet */
+  color: #565b5f; /* Use your primary color or any color you want for the bullet */
+}
+
+/* Image Grid */
+.image-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.grid-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s ease;
+}
+
+/* Card Content Styles */
+.card-content {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-icon {
+  color: #2196f3;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.card-content span {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.card-description {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.grid-item:hover {
+  transform: translateZ(30px);
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7) blur(1px);
+}
+
+.grid-item:hover .card-content {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.grid-item:hover .card-icon {
+  transform: translateY(-5px);
+  animation: iconPulse 1.5s ease-in-out infinite;
+}
+
+.grid-item:hover .card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes iconPulse {
+  0% { transform: scale(1) translateY(-5px); }
+  50% { transform: scale(1.1) translateY(-5px); }
+  100% { transform: scale(1) translateY(-5px); }
+}
+
+/* Responsive Design */
+/* Media Query for max-width 992px */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column; /* Change layout direction to column */
+    gap: 2rem; /* Adjust the gap between text and grid */
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr; /* Stack images in one column */
+    width: 100%; /* Make the grid take the full width */
+  }
+
+  .about-title {
+    font-size: 2.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .about-desc {
+    font-size: 1rem; /* Adjust description font size */
+  }
+
+  .explore-button {
+    font-size: 1rem; /* Adjust button font size */
+    padding: 1rem 2rem; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Media Query for max-width 768px */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack content vertically */
+    gap: 1.5rem; /* Adjust gap for smaller screens */
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr; /* Stack images in one column */
+  }
+
+  .about-title {
+    font-size: 2rem; /* Adjust title font size */
+  }
+
+  .about-desc {
+    font-size: 0.95rem; /* Adjust description font size */
+  }
+
+  .explore-button {
+    font-size: 1rem; /* Adjust button font size */
+    padding: 0.9rem 1.8rem; /* Adjust button padding */
+  }
+}
+
