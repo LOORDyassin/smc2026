@@ -38,7 +38,7 @@ export const Hero: FC<Props> = ({ theme }) => {
             </p>
             <div className="hero__btns">
               <button className="primary__btn"><a href='#about'>Get Started Now</a></button>
-              <button className="secondary__btn"><a href='https://www.ieee.org/membership/join#chapter=id-7311-Students-'><span>Join Us !</span></a></button>
+              <button className="secondary__btn"><a href='https://docs.google.com/forms/d/13bwrvBMg-ztF1HsUI7QhZ2WgfoFzIYGs3quXB-56L1s/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnMW3GOJUzypH4aUCFiich_6rVh2-fMlN7o76V7kc_z-BRkz0z4pvAAhs4RQM_aem_PJip4hJECX99z0w-H65xlA&edit_requested=true'><span>Join Us !</span></a></button>
             </div>
           </div>
           <div className="hero__img">
