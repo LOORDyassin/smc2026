@@ -168,7 +168,7 @@ export const Team : FC<Props> = ({ theme }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const [selectedYear, setSelectedYear] = useState("2025");
+  const [selectedYear, setSelectedYear] = useState("2026");
 
   return (
     <section id="team" className="our__team" ref={ref}>

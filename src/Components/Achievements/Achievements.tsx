@@ -62,6 +62,8 @@ import pitch2 from '../../images/events/trc2.0/pitch2.jpg';
 import winners from '../../images/events/trc2.0/winners.jpg';
 import session1lat from '../../images/events/SESSION1LATSESSION(ONLINE).jpg';
 
+import trc3 from '../../images/events/trc3.0/trc.jpg';
+
 import './achievements.css';
 import { useInView } from 'framer-motion';
 
@@ -74,6 +76,26 @@ interface Achievement {
 }
 
 const achievementsData: Achievement[] = [
+  {
+    id: 16,
+    title: ' TRC 3.0: A Milestone in Innovation and Collaboration ',
+    description: `💡 TRC 3.0 marked a new milestone of innovation and collaboration, bringing together creative minds for an impactful
+     hackathon experience at the Higher Institute of Computer Science and Multimedia of Sfax.
+    Organized by IEEE IAS, WIE, SMC, CS, SIGHT, IES, PES, and RAS under IEEE ISIMS Student Branch, 
+    this edition welcomed participants from student branches across Tunisia. Through hands-on workshops, 
+    expert-led panels, and intense challenge sessions, TRC 3.0 became a space where ideas evolved into meaningful solutions.
+    🚀 Powered by passion, teamwork, and bold thinking, our challengers delivered inspiring projects that 
+    reflected both technical excellence and real-world impact.
+    More than an event_it was TRC 3.0. 🔥
+    #TRC3_0 
+    #IEEE_ISIMS_SB
+    #TechResolveChallenge
+    #GreatStoriesBeginHere`,
+    date: '16-17 march 2026',
+    images: [
+      trc3,
+    ],
+  },
   {
     id: 10,
     title: ' 𝐀𝐈 𝐔𝐧𝐥𝐨𝐜𝐤𝐞𝐝: 𝐅𝐫𝐨𝐦 𝐂𝐨𝐧𝐜𝐞𝐩𝐭𝐬 𝐭𝐨 𝐇𝐚𝐧𝐝𝐬-𝐎𝐧 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 ',

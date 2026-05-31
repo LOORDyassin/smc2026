@@ -49,17 +49,17 @@ const About: FC<Props> = ({ theme }) => {
           <div className="image-grid">
             <div className="grid-item events">
               <div className="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Events" />
+                <img src="https://i.postimg.cc/YCgtXXMm/IMG-9812.jpg" alt="Events" />
                 <div className="card-content">
                   <Calendar className="card-icon" size={38} />
                   <span>Events</span>
-                  <p className="card-description">Join our exciting events and stay connected</p>
+                  <p className="card-description">Join our exciting events and stay connected</p> 
                 </div>
               </div>
             </div>
             <div className="grid-item family">
               <div className="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Family" />
+                <img src="https://i.postimg.cc/7hd4xRgY/efd0daa9-1ced-4a2f-86c8-47dbacae3d46.jpg" alt="Family" />
                 <div className="card-content">
                   <Users className="card-icon" size={38} />
                   <span>Family</span>
@@ -69,7 +69,7 @@ const About: FC<Props> = ({ theme }) => {
             </div>
             <div className="grid-item fun">
               <div className="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fun" />
+                <img src="https://i.postimg.cc/mrjGckYG/5a762e11-4ec4-4f77-92a8-ab59adbe79bb.jpg" alt="Fun" />
                 <div className="card-content">
                   <Sparkles className="card-icon" size={38} />
                   <span>Fun</span>
@@ -79,7 +79,7 @@ const About: FC<Props> = ({ theme }) => {
             </div>
             <div className="grid-item workshops">
               <div className="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Workshops" />
+                <img src="https://i.postimg.cc/66gx4DvN/73e710fb-b381-4e9e-be82-86aad6bbf4eb.jpg" alt="Workshops" />
                 <div className="card-content">
                   <Laptop className="card-icon" size={38} />
                   <span>Workshops</span>
