@@ -28,6 +28,11 @@ import tsesion3Workshop9 from '../../images/events/event4/9.png';
 import tsesion3Workshop10 from '../../images/events/event4/10.png';
 import tsesion3Workshop11 from '../../images/events/event4/11.png';
 
+import chaima1 from '../../images/events/event7/chaima1.png';
+import chaima2 from '../../images/events/event7/chaima2.png';
+import hsanmzid from '../../images/events/event6/hsanmzid.png';
+import hsan from '../../images/events/event6/hsan.jpg';
+
 import onlinetalk from '../../images/events/event5/anat.png';
 
 import applunch from '../../images/events/appposter.jpg';
@@ -291,6 +296,72 @@ digital landscape.
     date: '22 February 2026',
     images: [
       onlinetalk,
+      
+    ],
+  },
+
+  {
+  id: 15,
+  title: ' Gen AI: LLM Prompting and Image & Video Generation and RAG & AI AGENT',
+  description: `🚀 We successfully wrapped up the first two sessions of our GENOPS Bootcamp, diving deep into the world of Generative AI .
+🔹 Session 1: LLM Prompting & Image/Video Generation
+🔹 Session 2: RAG & AI Agents
+These sessions were greatly led by Ms. Chaima Chtourou .
+This is just the beginning of more exciting sessions and hands-on experiences are coming!
+
+  🗓️April 8th
+  🕗08:00 PM
+  🎥Online via Google Meet
+
+  
+  #RAG 
+  #LLM
+  #IEEE 
+  #GenOps 
+  #AIAgents
+  #AICommunity
+  #GenerativeAI 
+  #TechEducation `,
+
+
+
+    date: '8 & 9 April 2026',
+    images: [
+      chaima1,
+      chaima2,
+    ],
+  },
+
+{
+    id: 16,
+    title: 'SESION 3: MLOps Fundamentals with MLFLOW',
+    description: ` 🚀We successfully conducted our third session of the GENOPS Bootcamp,
+     diving into the world of MLOps 💻
+    Led by Mr. Hsan Mzid, this session helped students explore ML ops concepts and it was
+     a first step into building a simple ML pipeline .
+    The session was a great step forward in bridging the gap between building models and 
+    delivering impactful AI solution .
+    Excited to see our participants growing their skills and mindset with each session!
+    🌟
+
+    🗓️April 11th
+    🕘13:30 PM
+    🌍ISIMS,Sc2
+
+    
+    #AI
+    #IEEE
+    #MLOps
+    #GenOps
+    #MLflow
+    #TechCommunity
+    #DataEngineering
+     #MachineLearning`,
+    date: '11 April 2026',
+    images: [
+      hsanmzid,
+      hsan,
+
       
     ],
   },

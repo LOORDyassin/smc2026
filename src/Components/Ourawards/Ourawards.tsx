@@ -1,8 +1,6 @@
 import { useRef } from 'react';
 import './Ourawards.css';
 import { useInView } from 'framer-motion';
-import tsyp from '../../../public/tsyp.jpg';
-
 // Define type for award data
 interface Award {
   title: string;
@@ -29,8 +27,8 @@ export const OurAwards = ({ theme }: { theme: string }) => {
         "Led community outreach programs impacting 800+ students in local schools",
         "Strengthened industry–academia ties through 6 collaborative events and company visits"
       ],
-      link: "https://ieee.tn/awards-recognition-committee/awards/outstanding-student-branch-chapter-award/",
-      imageUrl: tsyp,
+      link: "https://i.postimg.cc/cH0rSpXP/tsyp-cert.png",
+      imageUrl: "https://i.postimg.cc/cH0rSpXP/tsyp-cert.png",
       alt: "2025 Outstanding Student Chapter Award Certificate"
     },
     // Uncomment below if you have a second award
@@ -43,7 +41,7 @@ export const OurAwards = ({ theme }: { theme: string }) => {
     //     "Global impact on 1000+ students"
     //   ],
     //   link: "https://ieee.tn/awards-recognition-committee/awards/outstanding-student-branch-chapter-award/",
-    //   imageUrl: "/images/award-2022.jpg",
+    //   imageUrl: "https://i.postimg.cc/cH0rSpXP/tsyp-cert.png",
     //   alt: "2022 Outstanding Medium Student Branch Award"
     // }
   ];
@@ -95,7 +93,7 @@ const AwardCard = ({
       }}
     >
       <div className="award-image">
-        <img src="/tsyp.jpg" alt={award.alt || award.title} />
+        <img src={award.imageUrl} alt={award.alt || award.title} />
       </div>
       <div className="award-info">
         <div className="award-badge">🏆 {award.title}</div>
