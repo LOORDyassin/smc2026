@@ -27,7 +27,7 @@ export const OurAwards = ({ theme }: { theme: string }) => {
         "Led community outreach programs impacting 800+ students in local schools",
         "Strengthened industry–academia ties through 6 collaborative events and company visits"
       ],
-      link: "https://i.postimg.cc/cH0rSpXP/tsyp-cert.png",
+      link: "https://ieee.tn/awards-recognition-committee/awards/outstanding-student-branch-chapter-award/",
       imageUrl: "https://i.postimg.cc/cH0rSpXP/tsyp-cert.png",
       alt: "2025 Outstanding Student Chapter Award Certificate"
     },

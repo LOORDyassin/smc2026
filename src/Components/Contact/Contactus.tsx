@@ -240,8 +240,8 @@ export const Contact = () => {
                     <Phone />
                   </div>
                   <div className="contact__text">
-                    <h4>Phone</h4>
-                    <p>+216 22 430 350</p>
+                    <h4>Phone (Webmaster)</h4>
+                    <p>+216 26 552 952</p>
                   </div>
                 </div>
 
@@ -251,7 +251,7 @@ export const Contact = () => {
                   </div>
                   <div className="contact__text">
                     <h4>Email</h4>
-                    <p>isims@ieee.org</p>
+                    <p>smc-isims@ieee.tn</p>
                   </div>
                 </div>
               </div>
