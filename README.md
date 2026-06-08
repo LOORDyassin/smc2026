@@ -137,7 +137,7 @@ const stats = [
 
 Update `src/Components/Contact/Contactus.tsx` with:
 
-- Address (Pôle Technologique de Sfax, Sakiet Ezzit)
+- Address (multimedia de Sfax, sidi mansour)
 - Phone number
 - Email (isims@ieee.org)
 
@@ -177,9 +177,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-**Webmaster**: Youssef Dhouib  
+**Webmaster**: Yassine Souissi  
 **Email**: isims@ieee.org  
-**Address**: RQQ4+MVX, pôle technologique de sfax, Sakiet Ezzit 3021, Tunisia
+**Address**: QRWF+3VV,multimedia de sfax, sidi mansour 3064, Tunisia
 
 ---
 
