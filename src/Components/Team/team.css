@@ -3,41 +3,52 @@
 .team-year-toggle {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 12px;
     margin: 20px 0 40px;
 }
 
 .team-btn {
-    padding: 8px 24px;
-    font-size: 1rem;
+    padding: 8px 28px;
+    font-size: 0.9rem;
     font-weight: 600;
     border-radius: 50px;
-    border: 2px solid white;
-    background: transparent;
-    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
 }
 
-/* When active */
+.team-btn:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: white;
+}
+
 .team-btn.active {
     background: white;
+    border-color: white;
     color: var(--primary-color);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
 }
 
-/* Light theme fixes */
 .light-theme .team-btn {
-    border-color: var(--primary-color);
+    border-color: rgba(6, 130, 193, 0.3);
     color: var(--primary-color);
+    background: rgba(6, 130, 193, 0.05);
+}
+
+.light-theme .team-btn:hover {
+    border-color: var(--primary-color);
+    background: rgba(6, 130, 193, 0.1);
 }
 
 .light-theme .team-btn.active {
-    background: var(--primary-color);
+    background: var(--primary-gradient, var(--primary-color));
+    border-color: transparent;
     color: white;
+    box-shadow: 0 4px 14px rgba(6, 130, 193, 0.35);
 }
-
-
-
 
 /*============== TEAM SECTION ==============*/
 
@@ -45,24 +56,30 @@
     padding-top: 0;
 }
 
-/* NEW FLEXBOX GRID — replaces old grid */
 .team__wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center ALL rows */
+    justify-content: center;
     gap: 20px;
 }
 
-/* 4 cards per row on desktop */
 .team__item {
     flex: 1 1 calc(25% - 20px);
     max-width: calc(25% - 20px);
     background: var(--card-bg);
-    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 100%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.team__item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(55, 156, 246, 0.3);
 }
 
 .team__content {
@@ -70,54 +87,61 @@
     margin-bottom: 50px;
 }
 
-
-
-/* Light theme adjustments */
 .light-theme .team__item {
-    background: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-color: #e2e8f0;
 }
 
-/* Fix image visibility */
+.light-theme .team__item:hover {
+    box-shadow: 0 16px 40px rgba(6, 130, 193, 0.12);
+    border-color: rgba(6, 130, 193, 0.25);
+}
+
 .team__img {
     width: 100%;
     height: 250px;
-    border-radius: 5px 5px 0px 0px;
-    background: white;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background: #1e2635;
     overflow: hidden;
     flex-shrink: 0;
 }
 
 .light-theme .team__img {
-    background: #f5f5f5;
+    background: #f1f5f9;
 }
 
 .team__img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.team__item:hover .team__img img {
+    transform: scale(1.05);
 }
 
 .team__details {
-    padding: 15px 10px; /* Adjusted padding */
+    padding: 18px 14px;
     text-align: center;
-    flex-grow: 1; /* keeps card heights consistent */
+    flex-grow: 1;
 }
 
 .team__details h4 {
     color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
     line-height: 1.4;
 }
 
 .team__details p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .team__details .description {
@@ -125,63 +149,61 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    font-size: 1.1rem;
-    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
-/* Icons */
 .team__item .team__details i {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-right: 5px;
+    font-size: 1.2rem;
+    margin-right: 4px;
 }
 
-/* Social icons container */
+/* Social icons */
 .team__member-social {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-top: 15px;
+    gap: 0.75rem;
+    margin-top: 14px;
+    padding-bottom: 4px;
 }
 
-/* Each social icon */
 .social-icon {
-    background-color: #f0f0f0;
-    padding: 0.7rem;
-    border-radius: 40%;
-    transition: all 0.3s ease;
+    background-color: rgba(55, 156, 246, 0.08);
+    border: 1px solid rgba(55, 156, 246, 0.2);
+    padding: 0.6rem;
+    border-radius: 50%;
+    transition: all 0.25s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
 }
 
 .social-icon i {
-    font-size: 1.5rem;
-    color: #333;
-    transition: color 0.3s ease, transform 0.3s ease;
-    margin-left: 2px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
-/* Hover Effects */
 .social-icon:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.1);
+    background: var(--primary-gradient, var(--primary-color));
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(55, 156, 246, 0.3);
 }
 
-.social-icon.linkedin:hover i,
-.social-icon.gmail:hover i,
-.social-icon.facebook:hover i {
+.social-icon:hover i {
     color: #ffffff;
 }
 
-/* Focus */
 .social-icon i:focus {
     outline: none;
 }
 
-/* Remove underline */
 a.social-icon {
     text-decoration: none;
 }
@@ -189,7 +211,6 @@ a.social-icon {
 /*============= RESPONSIVE =============*/
 
 @media only screen and (max-width: 992px) {
-    /* 2 cards per row */
     .team__item {
         flex: 1 1 calc(50% - 20px);
         max-width: calc(50% - 20px);
@@ -197,7 +218,6 @@ a.social-icon {
 }
 
 @media only screen and (max-width: 600px) {
-    /* 1 card per row */
     .team__item {
         flex: 1 1 100%;
         max-width: 100%;

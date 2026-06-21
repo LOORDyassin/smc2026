@@ -108,21 +108,59 @@ export const Contact = () => {
         </div>
 
         <div className="contact__wrapper">
-          {/* ← FORM */}
+          {/* ← INFO PANEL (left, gradient bg) */}
+          <div className="contact__info-panel">
+            {/* Map */}
+            <div className="contact__map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.6762200798744!2d10.757233999999997!3d34.8392324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d19db21e2b53%3A0x771c533873752407!2sHigher%20Institute%20of%20Computer%20Science%20and%20Multimedia%20of%20Sfax!5e0!3m2!1sen!2stn!4v1743360052827!5m2!1sen!2stn"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Higher Institute of Computer Science and Multimedia of Sfax"
+              />
+            </div>
+
+            {/* Contact details */}
+            <div className="contact__details-inner">
+              <div className="contact__item">
+                <div className="contact__icon"><MapPin size={20} /></div>
+                <div className="contact__text">
+                  <h4>Address</h4>
+                  <p>RQQ4+MVX، pôle technologique de sfax, Sakiet Ezzit 3021</p>
+                </div>
+              </div>
+              <div className="contact__item">
+                <div className="contact__icon"><Phone size={20} /></div>
+                <div className="contact__text">
+                  <h4>Phone (Webmaster)</h4>
+                  <p>+216 26 552 952</p>
+                </div>
+              </div>
+              <div className="contact__item">
+                <div className="contact__icon"><Mail size={20} /></div>
+                <div className="contact__text">
+                  <h4>Email</h4>
+                  <p>smc-isims@ieee.tn</p>
+                </div>
+              </div>
+
+              <div className="contact__social">
+                <a href="https://www.facebook.com/people/IEEE-SMC-ISIMS-SB-Chapter/61557150934003/" aria-label="Facebook"><Facebook size={18} /></a>
+                <a href="https://tn.linkedin.com/company/ieee-smc-chapter-isims-student-branch?trk=public_post_feed-actor-name" aria-label="LinkedIn"><Linkedin size={18} /></a>
+                <a href="https://www.instagram.com/ieee_smc_isims_sb_chapter/" aria-label="Instagram"><Instagram size={18} /></a>
+              </div>
+            </div>
+          </div>
+
+          {/* ← FORM (right) */}
           <div className="contact__form">
             <form ref={formRef} onSubmit={handleSubmit}>
               {successMsg && (
-                <div
-                  style={{
-                    marginBottom: '1rem',
-                    padding: '0.75rem',
-                    background:
-                      successMsg.startsWith('✅') ? '#e6ffed' : '#ffe6e6',
-                    color: successMsg.startsWith('✅') ? '#2d7a2d' : '#a12d2d',
-                    borderRadius: '0.5rem',
-                    fontWeight: 500,
-                  }}
-                >
+                <div className={`contact__alert ${successMsg.startsWith('✅') ? 'contact__alert--success' : 'contact__alert--error'}`}>
                   {successMsg}
                 </div>
               )}
@@ -138,17 +176,7 @@ export const Contact = () => {
                   value={formData.user_name}
                   onChange={handleChange}
                 />
-                {errors.user_name && (
-                  <p
-                    style={{
-                      color: '#d32f2f',
-                      marginTop: '0.25rem',
-                      fontSize: '0.875rem',
-                    }}
-                  >
-                    {errors.user_name}
-                  </p>
-                )}
+                {errors.user_name && <p className="form__error">{errors.user_name}</p>}
               </div>
 
               <div className="form__group">
@@ -162,17 +190,7 @@ export const Contact = () => {
                   value={formData.user_email}
                   onChange={handleChange}
                 />
-                {errors.user_email && (
-                  <p
-                    style={{
-                      color: '#d32f2f',
-                      marginTop: '0.25rem',
-                      fontSize: '0.875rem',
-                    }}
-                  >
-                    {errors.user_email}
-                  </p>
-                )}
+                {errors.user_email && <p className="form__error">{errors.user_email}</p>}
               </div>
 
               <div className="form__group">
@@ -184,90 +202,12 @@ export const Contact = () => {
                   placeholder="How can we help you?"
                   value={formData.message}
                   onChange={handleChange}
-                  style={{ minHeight: '200px', height: '100%' }}
-                ></textarea>
-                {errors.message && (
-                  <p
-                    style={{
-                      color: '#d32f2f',
-                      marginTop: '0.25rem',
-                      fontSize: '0.875rem',
-                    }}
-                  >
-                    {errors.message}
-                  </p>
-                )}
+                />
+                {errors.message && <p className="form__error">{errors.message}</p>}
               </div>
 
-              <button type="submit" className="btn">
-                Send Message
-              </button>
+              <button type="submit" className="btn">Send Message</button>
             </form>
-          </div>
-
-          {/* ← INFO & MAP */}
-          <div className="contact__info">
-            <div className="contact__map">
-              <div className="contact__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.6762200798744!2d10.757233999999997!3d34.8392324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d19db21e2b53%3A0x771c533873752407!2sHigher%20Institute%20of%20Computer%20Science%20and%20Multimedia%20of%20Sfax!5e0!3m2!1sen!2stn!4v1743360052827!5m2!1sen!2stn"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Higher Institute of Computer Science and Multimedia of Sfax"
-                ></iframe>
-              </div>
-
-            </div>
-
-            <div className="contact__details">
-              <div className="contact__items-container">
-                <div className="contact__item">
-                  <div className="contact__icon">
-                    <MapPin />
-                  </div>
-                  <div className="contact__text">
-                    <h4>Address</h4>
-                    <p>RQQ4+MVX، pôle technologique de sfax, Sakiet Ezzit 3021</p>
-                  </div>
-                </div>
-
-                <div className="contact__item">
-                  <div className="contact__icon">
-                    <Phone />
-                  </div>
-                  <div className="contact__text">
-                    <h4>Phone (Webmaster)</h4>
-                    <p>+216 26 552 952</p>
-                  </div>
-                </div>
-
-                <div className="contact__item">
-                  <div className="contact__icon">
-                    <Mail />
-                  </div>
-                  <div className="contact__text">
-                    <h4>Email</h4>
-                    <p>smc-isims@ieee.tn</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact__social">
-                <a href="https://www.facebook.com/people/IEEE-SMC-ISIMS-SB-Chapter/61557150934003/" aria-label="Facebook">
-                  <Facebook />
-                </a>
-                <a href="https://tn.linkedin.com/company/ieee-smc-chapter-isims-student-branch?trk=public_post_feed-actor-name" aria-label="LinkedIn">
-                  <Linkedin />
-                </a>
-                <a href="https://www.instagram.com/ieee_smc_isims_sb_chapter/" aria-label="Instagram">
-                  <Instagram />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

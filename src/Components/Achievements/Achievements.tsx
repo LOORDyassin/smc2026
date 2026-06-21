@@ -67,15 +67,15 @@ import trc3 from '../../images/events/trc3.0/trc.jpg';
 import './achievements.css';
 import { useInView } from 'framer-motion';
 
-interface Achievement {
+export interface Achievement {
   id: number;
   title: string;
   description: string;
   date: string;
-  images: string[];  // ← array of all images for the modal
+  images: string[];
 }
 
-const achievementsData: Achievement[] = [
+export const achievementsData: Achievement[] = [
   {
     id: 10,
     title: ' 𝐀𝐈 𝐔𝐧𝐥𝐨𝐜𝐤𝐞𝐝: 𝐅𝐫𝐨𝐦 𝐂𝐨𝐧𝐜𝐞𝐩𝐭𝐬 𝐭𝐨 𝐇𝐚𝐧𝐝𝐬-𝐎𝐧 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 ',
@@ -581,21 +581,15 @@ export const Achievements: FC<Props> = ({ theme }) => {
                 transition: 'all 1s ease-out',
               }}
             >
-              {visible.map((a, idx) => (
-                <div
-                  key={a.id}
-                  className={`achievement__card ${idx === 1 ? 'middle-card' : ''
-                    }`}
-                >
+              {visible.map((a) => (
+                <div key={a.id} className="achievement__card">
                   <div className="achievement__img">
                     <img src={a.images[0]} alt={a.title} />
                     <div className="achievement__date">{a.date}</div>
                   </div>
                   <div className="achievement__content">
                     <h3 style={{ color: textColor }}>{a.title}</h3>
-                    <p className="achievement__description">
-                      {a.description}
-                    </p>
+                    <p className="achievement__description">{a.description}</p>
                     <button
                       className="read-more__btn"
                       onClick={() => setSelected(a)}
@@ -607,22 +601,16 @@ export const Achievements: FC<Props> = ({ theme }) => {
               ))}
             </div>
 
-            {/* desktop arrows */}
-            <div className="slider-arrows">
-              <button className="slider-arrow left" onClick={prev}>
+            {/* Bottom navigation bar */}
+            <div className="achievements__nav">
+              <button className="achievements__nav-btn" onClick={prev} aria-label="Previous">
                 <i className="ri-arrow-left-s-line" />
               </button>
-              <button className="slider-arrow right" onClick={next}>
-                <i className="ri-arrow-right-s-line" />
-              </button>
-            </div>
-
-            {/* mobile arrows */}
-            <div className="mobile-arrows">
-              <button className="mobile-arrow" onClick={prev}>
-                <i className="ri-arrow-left-s-line" />
-              </button>
-              <button className="mobile-arrow" onClick={next}>
+              <span className="achievements__nav-counter">
+                {currentIndex + 1} – {Math.min(currentIndex + 3, achievementsData.length)}
+                <span className="achievements__nav-total"> / {achievementsData.length}</span>
+              </span>
+              <button className="achievements__nav-btn" onClick={next} aria-label="Next">
                 <i className="ri-arrow-right-s-line" />
               </button>
             </div>
