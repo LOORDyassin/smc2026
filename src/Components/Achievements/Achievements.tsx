@@ -63,6 +63,7 @@ import winners from '../../images/events/trc2.0/winners.jpg';
 import session1lat from '../../images/events/SESSION1LATSESSION(ONLINE).jpg';
 
 import trc3 from '../../images/events/trc3.0/trc.jpg';
+import nlpSession1 from '../../images/events/event bootcamp/sesion1.png';
 
 import './achievements.css';
 import { useInView } from 'framer-motion';
@@ -76,6 +77,31 @@ export interface Achievement {
 }
 
 export const achievementsData: Achievement[] = [
+  {
+    id: 17,
+    title: 'Introduction to NLP and Text Preprocessing – Session 1',
+    description: `🚀 Session 1 is here!
+
+Kickstart your journey into the world of Artificial Intelligence by exploring the fundamentals of Natural Language Processing (NLP) and Text Preprocessing — the essential first step toward building intelligent, language-aware systems.
+
+In this session led by Mr. Kesentini Bassem — AI Engineer specializing in NLP & LLMs, Full-Stack Developer, and MSc Researcher — you'll uncover how machines read, interpret, and make sense of human language. From raw, messy text to clean, structured data ready for AI models, every transformation has a purpose.
+
+🔍 What you'll explore:
+• What is NLP and why it's central to modern AI
+• How machines understand and process human language
+• Core preprocessing techniques: tokenization, stemming, lemmatization, stop-word removal, and more
+• How clean data directly impacts model accuracy and performance
+• Real-world NLP applications: chatbots, search engines, sentiment analysis, and beyond
+
+📅 June 29, 2026 · ⏰ 6:30 PM · 💻 Online via Google Meet
+
+Whether you're a complete beginner or looking to solidify your AI foundations, this session is your gateway into language AI. Build a strong foundation, one token at a time — the future of intelligent systems starts here! 🔥
+
+#NLP #TextPreprocessing #ArtificialIntelligence #IEEE #SMC #ISIMS
+#ieee_isims_sb 💙🤍  #ieee_smc_isims_sbc 🤍🤍💙`,
+    date: '29 June 2026',
+    images: [nlpSession1],
+  },
   {
     id: 10,
     title: ' 𝐀𝐈 𝐔𝐧𝐥𝐨𝐜𝐤𝐞𝐝: 𝐅𝐫𝐨𝐦 𝐂𝐨𝐧𝐜𝐞𝐩𝐭𝐬 𝐭𝐨 𝐇𝐚𝐧𝐝𝐬-𝐎𝐧 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 ',
